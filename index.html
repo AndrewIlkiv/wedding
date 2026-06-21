@@ -1,3 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Андрій &amp; Оленка · 23 серпня 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <h1 class="hero__names">Андрій <span class="hero__amp">&amp;</span> Оленка</h1>
+      <p class="hero__date">23 серпня 2026 · Львів</p>
+      <div class="hero__rule"></div>
+      <div class="hero__countdown" id="countdown">
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-days">--</span>
+          <span class="countdown__unit">Днів</span>
+        </div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-hours">--</span>
+          <span class="countdown__unit">Годин</span>
+        </div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-mins">--</span>
+          <span class="countdown__unit">Хвилин</span>
+        </div>
+        <span class="countdown__sep">·</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="cd-secs">--</span>
+          <span class="countdown__unit">Секунд</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      прокрути вниз
+      <span class="hero__arrow"></span>
+    </div>
+  </section>
+  <div class="photo-gap" id="gap-1"
+       style="background-image: url('images/photo-gap-1.jpg')">
+    <!-- placeholder label removed when real photo added -->
+    <span class="photo-gap__label" aria-hidden="true">Фото — горизонтальне</span>
+  </div>
+  <section class="split" id="location">
+    <div class="split__photo"
+         style="background-image: url('images/location.jpg')">
+      <span class="split__photo__label" aria-hidden="true">Фото локації</span>
+    </div>
+    <div class="split__text">
+      <p class="section-tag">Місце</p>
+      <h2 class="section-heading">Де нас знайти</h2>
+      <div class="section-rule"></div>
+      <div class="section-body">
+        <strong>Ресторан [Назва]</strong><br>
+        вул. [Адреса], Львів<br><br>
+        <a class="map-link" href="#" target="_blank" rel="noopener">
+          &#9658; Відкрити в Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="photo-gap" id="gap-2"
+       style="background-image: url('images/photo-gap-2.jpg')">
+    <span class="photo-gap__label" aria-hidden="true">Фото деталь</span>
+  </div>
+  <section class="split" id="agenda">
+    <div class="split__text split__text--pink">
+      <p class="section-tag">Програ&#1084;а</p>
+      <h2 class="section-heading">День в деталях</h2>
+      <div class="section-rule"></div>
+      <ol class="agenda" role="list">
+        <li class="agenda__item">
+          <span class="agenda__time">12:00</span>
+          <span class="agenda__dot"></span>
+          <div>
+            <div class="agenda__event">Цере&#1084;онія одруження</div>
+            <div class="agenda__desc">[Місце цере&#1084;онії]</div>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__time">14:00</span>
+          <span class="agenda__dot"></span>
+          <div>
+            <div class="agenda__event">Святковий банкет</div>
+            <div class="agenda__desc">Ресторан [Назва]</div>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__time">20:00</span>
+          <span class="agenda__dot"></span>
+          <div>
+            <div class="agenda__event">Танці та &#1084;узика</div>
+            <div class="agenda__desc">До пізньої ночі</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="split__photo split__photo--emerald"
+         style="background-image: url('images/agenda.jpg')">
+      <span class="split__photo__label" aria-hidden="true">Фото ат&#1084;осфери</span>
+    </div>
+  </section>
+  <div class="photo-gap" id="gap-3"
 style="background-image: url('images/photo-gap-3.jpg')">
     <span class="photo-gap__label" aria-hidden="true">Фото — ро&#1084;античний &#1084;о&#1084;ент</span>
   </div>
@@ -42,11 +148,7 @@ style="background-image: url('images/photo-gap-3.jpg')">
       Будь ласка, підтвердіть вашу присутність до [дата].
     </p>
     <div class="rsvp__form-wrapper">
-      <iframe class="rsvp__iframe"
-        src="GOOGLE_FORM_EMBED_URL_HERE"
-        title="RSVP фор&#1084;а">
-        Завантаження…
-      </iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfhCg9dze9VeXd-Iuyxvrk6MGY4QNNyiZCGcOT1XLFCxXOrTw/viewform?embedded=true" width="640" height="592" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe>
     </div>
     <p class="rsvp__note">
       Якщо фор&#1084;а не відображається,
