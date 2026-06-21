@@ -1,0 +1,414 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --olive:     #6b7c3f;
+  --olive-dk:  #4a5e2a;
+  --emerald:   #2d7a4f;
+  --pink:      #e8c4c8;
+  --pink-lt:   #fdf5f5;
+  --cream:     #f6f5f0;
+  --dark:      #222222;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  background: var(--cream);
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  /* Gradient is the dev placeholder — replace with: background-image: url('images/hero.jpg') before launch */
+  background-color: var(--olive-dk);
+  background-image: linear-gradient(160deg, var(--olive-dk) 0%, var(--olive) 45%, var(--emerald) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2; /* sits above dark overlay when real photo replaces gradient */
+  padding: 0 20px;
+}
+
+.hero__names {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+
+.hero__amp { color: var(--pink); }
+
+.hero__date {
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 28px;
+}
+
+.hero__rule {
+  width: 50px;
+  height: 1px;
+  background: var(--pink);
+  margin: 0 auto 28px;
+}
+
+/* Countdown */
+.hero__countdown {
+  display: flex;
+  gap: clamp(12px, 3vw, 24px);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.countdown__block { text-align: center; }
+
+.countdown__num {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1;
+}
+
+.countdown__unit {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 5px;
+}
+
+.countdown__sep {
+  font-size: 1.4rem;
+  color: var(--pink);
+  opacity: 0.5;
+  padding-top: 6px;
+}
+
+/* Scroll hint */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.hero__arrow {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.3);
+  margin: 6px auto 0;
+  animation: arrow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes arrow-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 0.8; transform: scaleY(1.15); }
+}
+
+/* Scroll-reveal: elements are visible by default; JS adds .hidden on load */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+/* ── PHOTO GAPS ── */
+.photo-gap {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Placeholder gradient */
+  background-color: var(--olive-dk);
+  background-image: linear-gradient(135deg, var(--olive-dk) 0%, var(--emerald) 50%, var(--olive) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-gap__label {
+  border: 2px dashed rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Mobile: disable fixed parallax (broken on iOS) */
+@media (max-width: 768px) {
+  .photo-gap {
+    background-attachment: scroll;
+  }
+}
+
+/* ── SPLIT SECTIONS ── */
+.split {
+  display: flex;
+  min-height: 320px;
+}
+
+.split__photo {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--olive-dk);
+  background-image: linear-gradient(135deg, var(--olive-dk), var(--olive));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.split__photo--emerald {background-image: linear-gradient(135deg, var(--emerald), var(--olive-dk));
+}
+
+.split__photo__label {
+  border: 2px dashed rgba(255,255,255,0.2);
+  padding: 8px 14px;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.split__text {
+  flex: 1;
+  background: var(--cream);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split__text--pink { background: var(--pink-lt); }
+
+/* ── SECTION TYPOGRAPHY ── */
+.section-tag {
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  color: var(--olive);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.section-rule {
+  width: 36px;
+  height: 1px;
+  background: var(--olive);
+  margin: 12px 0 20px;
+}
+
+.rsvp .section-rule { margin-left: auto; margin-right: auto; }
+
+.section-body {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.75;
+}
+
+/* Mobile: split sections stack vertically */
+@media (max-width: 768px) {
+  .split { flex-direction: column; }
+  .split__photo { height: 200px; flex: none; min-height: 0; }
+  .split__text { padding: 32px 24px; }
+}
+
+.map-link {
+  color: var(--olive);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+.map-link:hover { text-decoration: underline; }
+
+/* ── AGENDA ── */
+.agenda {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agenda__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.agenda__time {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--olive);
+  text-transform: uppercase;
+  min-width: 52px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.agenda__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.agenda__event {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+.agenda__desc {
+  font-size: 0.78rem;
+  color: #999;
+  margin-top: 3px;
+}
+
+/* ── DRESS CODE SWATCHES ── */
+.swatches {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.swatch { text-align: center; }
+
+.swatch__circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 0 auto 6px;
+}
+
+.swatch__name {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ── RSVP ── */
+.rsvp {
+  background: var(--cream);
+  padding: 72px 10%;
+  text-align: center;
+}
+
+.rsvp__intro {
+  max-width: 480px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.rsvp__form-wrapper {
+  /* Clip Google Form's own header/footer chrome */
+  overflow: hidden;
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.rsvp__iframe {
+  display: block;
+  width: 100%;
+  height: 640px;
+  border: none;
+  /* Negative top/bottom margins push Google's header and footer out of the clipped wrapper */
+  margin-top: -52px;
+  margin-bottom: -48px;
+}
+
+.rsvp__note {
+  margin-top: 24px;
+  font-size: 0.78rem;
+  color: #999;
+}
+
+.rsvp__note a {
+  color: var(--olive);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .rsvp { padding: 48px 6%; }
+  .rsvp__iframe { height: 720px; }
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer__names {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer__heart { color: var(--pink); margin: 0 6px; }
+
+.footer__date {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* ── MOBILE OVERRIDES (max-width: 768px) ── */
+@media (max-width: 768px) {
+  /* Hero date smaller letter-spacing */
+  .hero__date { letter-spacing: 3px; }
+
+  /* Countdown tighter */
+  .hero__countdown { gap: 10px; }
+  .countdown__sep  { font-size: 1rem; }
+
+  /* Split sections: photo on top, text below (already handled by flex-direction:column) */
+
+  /* RSVP padding tighter — already handled above */
+}
