@@ -27,7 +27,8 @@ body {
   background-position: center;
   /* Gradient is the dev placeholder — replace with: background-image: url('images/hero.jpg') before launch */
   background-color: var(--olive-dk);
-  background-image: linear-gradient(160deg, var(--olive-dk) 0%, var(--olive) 45%, var(--emerald) 100%);
+  /* background-image: linear-gradient(160deg, var(--olive-dk) 0%, var(--olive) 45%, var(--emerald) 100%); */
+  background-image: url('images/photo-gap-1.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +51,7 @@ body {
   text-shadow: 0 2px 16px rgba(0,0,0,0.35);
 }
 
-.hero__amp { color: var(--pink); }
+.hero__amp { color: var(--cream); }
 
 .hero__date {
   font-size: clamp(0.6rem, 1.5vw, 0.75rem);
@@ -274,7 +275,7 @@ body {
 }
 
 .agenda__time {
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   letter-spacing: 2px;
   color: var(--olive);
   text-transform: uppercase;
@@ -294,7 +295,8 @@ body {
 
 .agenda__event {
   font-family: Georgia, serif;
-  font-size: 0.95rem;
+  font-style: italic;
+  font-size: 1.5rem;
   color: var(--dark);
 }
 
