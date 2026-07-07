@@ -164,6 +164,13 @@ body {
   pointer-events: none;
 }
 
+.map_embed {
+  overflow: hidden;
+  max-width: 390px;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
 /* Mobile: disable fixed parallax (broken on iOS) */
 @media (max-width: 768px) {
   .photo-gap {
@@ -346,7 +353,7 @@ body {
 .rsvp__form-wrapper {
   /* Clip Google Form's own header/footer chrome */
   overflow: hidden;
-  max-width: 640px;
+  max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
 }
