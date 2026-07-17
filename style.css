@@ -323,7 +323,7 @@ body {
   flex-wrap: wrap;
 }
 
-.swatch { text-align: center; }
+.swatch { text-align: center; width: 100px;}
 
 .swatch__circle {
   width: 44px;
