@@ -169,6 +169,7 @@ body {
   max-width: 390px;
   margin: 0 auto;
   border-radius: 2px;
+  padding: 0px !important;
 }
 
 /* Mobile: disable fixed parallax (broken on iOS) */
@@ -247,6 +248,7 @@ body {
 .rsvp .section-rule { margin-left: auto; margin-right: auto; }
 
 .section-body {
+  font-style: italic;
   font-size: 0.9rem;
   color: #555;
   line-height: 1.75;
